@@ -54,6 +54,9 @@
 /* ---------- 2. Dasar ---------- */
 * { box-sizing: border-box; }
 
+/* Atribut hidden harus menang atas display pada komponen */
+[hidden] { display: none !important; }
+
 body {
     margin: 0;
     background: var(--bg);
@@ -510,15 +513,38 @@ img { max-width: 100%; }
 .ticket-foot { margin-top: auto; padding: .9rem 1.1rem; border-top: 1px solid var(--border-soft); background: var(--surface-2); }
 
 /* Halaman pelanggan */
-.customer-topbar { position: sticky; top: 0; z-index: 1030; background: var(--sidebar); color: #fff; padding: .9rem 1.1rem; }
-.customer-wrap { max-width: 1100px; margin: 0 auto; padding: 1.1rem 1.1rem 8rem; }
+.customer-body { padding-bottom: 96px; }
+.customer-topbar { position: sticky; top: 0; z-index: 1030; background: var(--sidebar); color: #fff; padding: .8rem 1.1rem; }
+.customer-topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.customer-topbar .brand-text strong { color: #fff; }
+.customer-topbar .brand-text small { color: var(--sidebar-caption); }
+.customer-topbar .brand { margin-bottom: 0; padding: 0; }
+.table-chip { display: inline-flex; align-items: center; gap: .4rem; background: var(--accent); color: var(--accent-ink); border-radius: 999px; padding: .4rem .8rem; font-size: .82rem; font-weight: 700; white-space: nowrap; }
+.icon-btn-dark { background: rgba(255,255,255,.1); border-color: transparent; color: #fff; }
+.icon-btn-dark:hover, .icon-btn-dark:focus { background: rgba(255,255,255,.2); border-color: transparent; color: #fff; }
+.cart-badge { position: absolute; top: -5px; right: -5px; background: var(--accent); color: var(--accent-ink); font-size: .68rem; font-weight: 800; min-width: 20px; height: 20px; border-radius: 999px; display: grid; place-items: center; padding: 0 .25rem; }
+.customer-wrap { max-width: 1100px; margin: 0 auto; padding: 1.1rem 1.1rem 2rem; }
 .floating-cart { position: fixed; left: 0; right: 0; bottom: 0; z-index: 1035; padding: .8rem 1.1rem; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-top: 1px solid var(--border); }
 .floating-cart .inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; }
+
+@media (max-width: 575.98px) {
+    .customer-topbar { padding: .7rem .9rem; }
+    .customer-topbar-inner { gap: .5rem; }
+    .customer-topbar .brand-text small { display: none; }
+    .customer-topbar .brand-text strong { font-size: .92rem; }
+    .customer-topbar .brand-mark { width: 36px; height: 36px; border-radius: 11px; font-size: .9rem; }
+    .table-chip { padding: .35rem .6rem; font-size: .76rem; }
+    .customer-topbar .icon-btn { width: 38px; height: 38px; }
+    .offcanvas-end { width: 100%; }
+}
 
 /* Struk */
 .receipt-card { max-width: 420px; margin: 0 auto; background: #fff; border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow); padding: 1.6rem; }
 .receipt-mono { font-family: "Courier New", ui-monospace, monospace; font-size: .88rem; }
 .receipt-mono .sum-row { font-size: .88rem; }
+.receipt-mono .table > thead th,
+.receipt-mono .table > tbody td { padding-left: 0; padding-right: 0; }
+.receipt-mono .table > thead th { background: transparent; }
 .dashed-line { border-top: 2px dashed var(--border); margin: .9rem 0; }
 
 /* ---------- 7. Responsif ---------- */
