@@ -206,7 +206,7 @@ $label_kategori = ['makanan' => 'Makanan', 'minuman' => 'Minuman', 'topping' => 
                 <span class="value money">Rp <?= number_format($grand_total, 0, ',', '.'); ?></span>
             </div>
 
-            <form action="<?= site_url('pelanggan/checkout/' . $no_meja); ?>" method="POST" class="mt-auto">
+            <form action="<?= site_url('pelanggan/checkout/' . $no_meja); ?>" method="POST" class="mt-4">
                 <div class="mb-3">
                     <label class="form-label" for="nama_pemesan">Nama Anda</label>
                     <input type="text" id="nama_pemesan" name="nama_pemesan" class="form-control" required
