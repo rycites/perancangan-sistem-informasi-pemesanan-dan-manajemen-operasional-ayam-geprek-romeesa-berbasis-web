@@ -257,3 +257,5 @@ class Cashier extends CI_Controller {
         $this->load->view('templates/v_sidebar_kasir', $data);
     }
 }
+
+////
