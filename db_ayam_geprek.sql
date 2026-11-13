@@ -26,6 +26,9 @@ SET time_zone = "+00:00";
 --
 -- Struktur dari tabel `detail_transaksi`
 --
+CREATE DATABASE IF NOT EXISTS `db_ayam_geprek` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+USE `db_ayam_geprek`;
 
 CREATE TABLE `detail_transaksi` (
   `id_detail` int(11) NOT NULL,
